@@ -5,22 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RGH empaques</title>
     <style>
-        body{margin: 0;}
-        header{position: sticky; top: 0; z-index: 1000;}
+        body{margin: 0; overflow-x: hidden;}
+        /* sticky sirve para mantener un objeto pegado mientras se desplaza la pantalla */
+        header{position: sticky; top: 0; z-index: 1000; background-color: white;}
         .contenedorheader{display: flex; gap: 200px; align-items: center; justify-content: center;}
         nav{display: flex; gap: 30px; transition: 0.5s ease;}
         .encabezado{transition: 0.5s ease; text-decoration: none; color: black;}
-        .encabezado:hover{transform: scale(1.1);}
-        .imagen{display: flex; justify-content: center; width: 100vw;}
-        .contacto{width: 600px; height: 300px; border-radius: 20px; background-color: rgb(238, 234, 231); margin: 0 auto; margin-top: 10px;
-            display: flex; flex-direction: column; text-align: center;}
-        .contacto p{margin-top: 0 auto}
+        .encabezado:hover{transform: scale(1.1); color: orange;}
+        .imagen{display: flex; justify-content: center; width: 100%;}
+        .quienessomos{width: 800px; height: 300px; border-radius: 20px; background-color: rgb(238, 234, 231); margin: 0 auto; margin-top: 10px;
+            display: flex; flex-direction: column; text-align: center; padding: 10px;}
+        .quienessomos p{margin-top: 0 auto}
         h2{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+        .productos{width: 1000px; height: 300px; margin: 0 auto; margin-top: 20px; border-radius: 20px;}
+        input{display: none;}
+        /* display:none sirve para ocultar */
+        .contenido{display: none; padding: 10px; background: rgba(238, 234, 231, 0.699); border-radius: 10px;}
+        /* checked es para condicionar a que se haga solamente cuando esta marcado el input:Radio
+           el ~ es para usar un elemento del mismo nivel jeraquico o inferior, basicamente para seleccionar de manera especifica una clase o id 
+           display:block para que ocupe el espacio completo necesario*/
+        #tab-cajas:checked ~ .contenidoproductos .cajas{display: block;}
+        #tab-peliculas:checked ~ .contenidoproductos .peliculas{display: block;}
+        #tab-cintas:checked ~ .contenidoproductos .cintas{display: block;}
+        #tab-fleje:checked ~ .contenidoproductos .fleje{display: block;}
+        #tab-foam:checked ~ .contenidoproductos .foam{display: block;}
+        #tab-herramienta:checked ~ .contenidoproductos .herramienta{display: block;}
+        #tab-otros:checked ~ .contenidoproductos .otros{display: block;}
+        .pestaña{display: inline-block; background-color: rgba(255, 166, 0, 0.596); cursor: pointer; border-radius: 5px; padding: 5px;}
+        #tab-cajas:checked ~ .pestaña label[for="tab-cajas"],#tab-peliculas:checked ~ .pestaña label[for="tab-peliculas"]{background-color: aqua;}
+        .rayafinal{width:100vw; height: 50px; background: rgba(255, 166, 0, 0.61);}
+        .contacto{background-image: url(img/almacen\ 4.jpg); background-repeat: no-repeat; background-size: cover; width: 100vw; height: 700px;
+                display: flex; }
+        .contactanos{width: 800px; height: 400px; background: rgba(255, 255, 255, 0.863); margin: 0 auto; margin-top: 150px; border-radius: 20px; 
+            display: flex; gap: 130px;}
+        .contactanos h2{margin-left: 20px; color: orange;}
+        .contactanos p{font-size: 20px; margin-left: 20px;}
+
 
     </style>
         
 </head>
 <body>
+    <!-- encabezado -->
     <header>
         <div class="contenedorheader">
             <div class="logo">
@@ -28,24 +54,110 @@
             </div>
             <nav>
                 <a href="" class="encabezado">Inicio</a>
-                <a href="" class="encabezado">¿Quienes somos?</a>
                 <a href="" class="encabezado">Productos</a>
+                <a href="" class="encabezado">Contacto</a>
             </nav>
         </div>
-       <hr color="black">
+       <hr color="black" style="height: 3px;">
     </header>
     
+    <!-- imagenes de almacen al inicio -->
     <div class="imagen">
         <img src="img/almacen1.jpeg" alt="almacen" width="33.333%" height="350px">
         <img src="img/almacen2.webp" alt="almacen" width="33.333%" height="350px">
         <img src="img/almacen 3.jpg" alt="almacen" width="33.333%" height="350px">
     </div>
 
-    <div class="contacto">
-         <h2>¿Quienes somos?</h2>
-         <p>RGH Empaques & Productos de Embalaje es una empresa mexicana fundada en 2020, especializada en la fabricación y comercialización de cajas de cartón y 
-            materiales de empaque.</p>
+    <!-- etiqueta de quienes somos -->
+    <div class="quienessomos">
+         <h2>RGH Empaques & Productos de Embalaje</h2>
+         <p>En RGH Empaques priorizamos la atencion a nuestros clientes y la calidad de nuestros productos</p>
+         <p>Estamos en el mercado desde 1996, fabricamos y comercializamos caja de cartón y productos de empaque</p>
     </div>
 
+    <!-- pestaña para visualizar los productos -->
+    <div class="productos">
+        <!-- botones de seleccion -->
+         <!-- name:juntas varios input en grupos, id: darles un valor unico a cada uno -->
+        <input type="radio" name="categoria" id="tab-cajas" checked>
+        <input type="radio" name="categoria" id="tab-peliculas">
+        <input type="radio" name="categoria" id="tab-cintas">
+        <input type="radio" name="categoria" id="tab-fleje">
+        <input type="radio" name="categoria" id="tab-foam">
+        <input type="radio" name="categoria" id="tab-herramienta">
+        <input type="radio" name="categoria" id="tab-otros">
+        
+        <!-- las pestañas -->
+        <div class="pestañas">
+            <label for="tab-cajas" class="pestaña">Cajas de carton</label>
+            <label for="tab-peliculas" class="pestaña">Peliculas plásticas</label>
+            <label for="tab-cintas" class="pestaña">Cintas adhesivas</label>
+            <label for="tab-fleje" class="pestaña">Fleje</label>
+            <label for="tab-foam" class="pestaña">Foam</label>
+            <label for="tab-herramienta" class="pestaña">Herramienta</label>
+            <label for="tab-otros" class="pestaña">Otros productos</label>
+        </div>
+
+        <!-- contenidos de las pestañas -->
+        <div class="contenidoproductos">
+            <div class="contenido cajas">
+                <h3>Cajas de carton</h3>
+                <p>carton</p>
+            </div>
+
+            <div class="contenido peliculas">
+                <h3>Películas plásticas</h3>
+                <p>peliculas plasticas</p>
+            </div>
+
+            <div class="contenido cintas">
+                <h3>Cintas adhesivas</h3>
+                <p>Cintas</p>
+            </div>
+
+            <div class="contenido fleje">
+                <h3>Fleje</h3>
+                <p>fleje</p>
+            </div>
+
+            <div class="contenido foam">
+                <h3>Foam</h3>
+                <p>foam</p>
+            </div>
+
+            <div class="contenido herramienta">
+                <h3>Herramienta</h3>
+                <p>herramienta</p>
+            </div>
+
+            <div class="contenido otros">
+                <h3>Otros productos</h3>
+                <p>productos</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="rayafinal"></div>
+
+    <div class="contacto">
+        
+        <div class="contactanos">
+            <div class="numero">
+                <h2>Contacto</h2>
+                <p>81-4007-0095</p>
+                <p>rghempaques@</p>
+                <p>San Nicolás de los Garza, N.L</p>
+            </div>
+            
+
+            <div class="redes">
+                <h2>Redes sociales</h2>
+                <p>Instagram</p>
+                <p>Facebook</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
