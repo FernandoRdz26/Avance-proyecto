@@ -4,46 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RGH empaques</title>
-    <style>
-        body{margin: 0; overflow-x: hidden;}
-        /* sticky sirve para mantener un objeto pegado mientras se desplaza la pantalla */
-        header{position: sticky; top: 0; z-index: 1000; background-color: white;}
-        .contenedorheader{display: flex; gap: 200px; align-items: center; justify-content: center;}
-        nav{display: flex; gap: 30px; transition: 0.5s ease;}
-        .encabezado{transition: 0.5s ease; text-decoration: none; color: black;}
-        .encabezado:hover{transform: scale(1.1); color: orange;}
-        .imagen{display: flex; justify-content: center; width: 100%;}
-        .quienessomos{width: 800px; height: 300px; border-radius: 20px; background-color: rgb(238, 234, 231); margin: 0 auto; margin-top: 10px;
-            display: flex; flex-direction: column; text-align: center; padding: 10px;}
-        .quienessomos p{margin-top: 0 auto}
-        h2{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
-        .productos{width: 1000px; height: 300px; margin: 0 auto; margin-top: 20px; border-radius: 20px;}
-        input{display: none;}
-        /* display:none sirve para ocultar */
-        .contenido{display: none; padding: 10px; background: rgba(238, 234, 231, 0.699); border-radius: 10px;}
-        /* checked es para condicionar a que se haga solamente cuando esta marcado el input:Radio
-           el ~ es para usar un elemento del mismo nivel jeraquico o inferior, basicamente para seleccionar de manera especifica una clase o id 
-           display:block para que ocupe el espacio completo necesario*/
-        #tab-cajas:checked ~ .contenidoproductos .cajas{display: block;}
-        #tab-peliculas:checked ~ .contenidoproductos .peliculas{display: block;}
-        #tab-cintas:checked ~ .contenidoproductos .cintas{display: block;}
-        #tab-fleje:checked ~ .contenidoproductos .fleje{display: block;}
-        #tab-foam:checked ~ .contenidoproductos .foam{display: block;}
-        #tab-herramienta:checked ~ .contenidoproductos .herramienta{display: block;}
-        #tab-otros:checked ~ .contenidoproductos .otros{display: block;}
-        .pestaña{display: inline-block; background-color: rgba(255, 166, 0, 0.596); cursor: pointer; border-radius: 5px; padding: 5px;}
-        #tab-cajas:checked ~ .pestaña label[for="tab-cajas"],#tab-peliculas:checked ~ .pestaña label[for="tab-peliculas"]{background-color: aqua;}
-        .rayafinal{width:100vw; height: 50px; background: rgba(255, 166, 0, 0.61);}
-        .contacto{background-image: url(img/almacen\ 4.jpg); background-repeat: no-repeat; background-size: cover; width: 100vw; height: 700px;
-                display: flex; }
-        .contactanos{width: 800px; height: 400px; background: rgba(255, 255, 255, 0.863); margin: 0 auto; margin-top: 150px; border-radius: 20px; 
-            display: flex; gap: 130px;}
-        .contactanos h2{margin-left: 20px; color: orange;}
-        .contactanos p{font-size: 20px; margin-left: 20px;}
-
-
-    </style>
-        
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- encabezado -->
@@ -89,7 +50,7 @@
         
         <!-- las pestañas -->
         <div class="pestañas">
-            <label for="tab-cajas" class="pestaña">Cajas de carton</label>
+            <label for="tab-cajas" class="pestaña">Productos de carton</label>
             <label for="tab-peliculas" class="pestaña">Peliculas plásticas</label>
             <label for="tab-cintas" class="pestaña">Cintas adhesivas</label>
             <label for="tab-fleje" class="pestaña">Fleje</label>
@@ -101,38 +62,173 @@
         <!-- contenidos de las pestañas -->
         <div class="contenidoproductos">
             <div class="contenido cajas">
-                <h3>Cajas de carton</h3>
-                <p>carton</p>
+                <h3>Productos de carton</h3>
+                <p>Contamos con varias resistencias del cartón en doble corrugado y corrugado sencillo, fabricación de caja convencional y troquelada impresa o sin impresión</p>
+                    <div class="imagenesclase">
+                        <div class="imgprod">
+                            <img src="img/productos de carton/cajas genericas.png" alt="caja generica">
+                            <span>Caja generica</span>
+                        </div> 
+                        <div class="imgprod">
+                            <img src="img/productos de carton/caja troqueleada.png" alt="caja troquelada">
+                            <span>Caja troqueleada</span>
+                        </div>
+                        <div class="imgprod">
+                            <img src="img/productos de carton/esquineros.png" alt="esquineros">
+                            <span>Esquineros</span>
+                        </div>
+                        <div class="imgprod">
+                            <img src="img/productos de carton/laminas de carton.png" alt="laminas">
+                            <span>Laminas de carton</span>
+                        </div>
+                        <div class="imgprod">
+                            <img src="img/productos de carton/rollo de carton.png" alt="rollo de carton">
+                            <span>Rollo de carton</span>
+                        </div>
+                        <div class="imgprod">
+                            <img src="img/productos de carton/separadores de carton.png" alt="separadores">
+                            <span>separadores de carton</span>
+                        </div>
+                    </div>
+                    
+                
             </div>
 
             <div class="contenido peliculas">
                 <h3>Películas plásticas</h3>
-                <p>peliculas plasticas</p>
+                <p>Film estirable, utilizado para el enfardado o envoltura de cargas previamente paletizadas, para evitar la movilidad de los materiales al ser transportados. Contamos con distintas
+                    medidas (20”, 18”, 5” y 3”)
+                </p>
+                <div class="imagenesclase">
+                        <div class="imgprod">
+                            <img src="img/Peliculas plasticas/colores y transparente.png" alt="natural">
+                            <span>Colores y natural</span>
+                        </div> 
+                        <div class="imgprod">
+                            <img src="img/Peliculas plasticas/grado alimenticio.png" alt="alimenticio">
+                            <span>Grado industrial y alimenticio</span>
+                        </div>
+                        <div class="imgprod">
+                            <img src="img/Peliculas plasticas/maquina automatica.jpg" alt="maquina">
+                            <span>Para maquinas automaticas</span>
+                        </div>
+                        <div class="imgprod">
+                            <img src="img/Peliculas plasticas/pelicula manual.jpg" alt="manual">
+                            <span>Manual</span>
+                        </div>
+                    </div>
             </div>
+        
 
             <div class="contenido cintas">
                 <h3>Cintas adhesivas</h3>
-                <p>Cintas</p>
+                <p>Cintas de empaques, se compone de un adhesivo sensible a la presión revestido sobre un material de soporte que es generalmente un polipropileno o poliester</p>
+                <div class="imagenesclase">
+                        <div class="imgprod">
+                            <img src="img/Cintas adhesivas/cinta de empaque.png" alt="empaque">
+                            <span>Cinta de empaque</span>
+                        </div> 
+                        <div class="imgprod">
+                            <img src="img/Cintas adhesivas/cinta transparente.png" alt="transparente">
+                            <span>Cinta transparente</span>
+                        </div>
+                        <div class="imgprod">
+                            <img src="img/Cintas adhesivas/cintas demilitadora.png" alt="demilitadora">
+                            <span>Cinta demilitadora</span>
+                        </div>
+                        <div class="imgprod">
+                            <img src="img/Cintas adhesivas/cintas personalizadas.png" alt="personalizada">
+                            <span>Cinta personalizada</span>
+                        </div>
+                </div>
             </div>
 
             <div class="contenido fleje">
-                <h3>Fleje</h3>
-                <p>fleje</p>
+                <h3>Flejes</h3>
+                <p>Fleje es una cinta, metálica y/o de plastico, utilizada para asegurar o fijar el embalaje de diversos productos, 
+                    mayoritariamente productos pesados o voluminosos.  Manual y para máquina</p>
+                    <div class="imagenesclase">
+                        <div class="imgprod">
+                                <img src="img/Flejes/fleje.png" alt="fleje">
+                                <ul>
+                        <li>Fleje de plástico</li>
+                        <li>Fleje de poliester</li>
+                        <li>Fleje de acero</li>
+                        <li>Fleje para maquinas</li>
+                        <li>Fleje galvanizado</li> 
+                        </ul>
+                        </div>
+                    </div>
             </div>
 
             <div class="contenido foam">
-                <h3>Foam</h3>
-                <p>foam</p>
+                <h3>Burbuja,Foam y Mick pack</h3>
+                <p>La película de burbuja de aire y foam es útil para proteger, envolver y empacar cualquier tipo de producto. 
+                    Se puede manejar en pliegos, bolsas ,punteada y/o seccionada.  El micpack evita que su producto se mueva al trasladarse.</p>
+                    <div class="imagenesclase">
+                            <div class="imgprod">
+                                <img src="img/Foam/burbuja antiestatica.png" alt="antiestatica">
+                                <span>Burbuja antiestatica</span>
+                            </div> 
+                            <div class="imgprod">
+                                <img src="img/Foam/burbuja natural.png" alt="natural">
+                                <span>Burbuja natural</span>
+                            </div>
+                            <div class="imgprod">
+                                <img src="img/Foam/foam.png" alt="foam">
+                                <span>Foam</span>
+                            </div>
+                            <div class="imgprod">
+                                <img src="img/Foam/Mick pack.png" alt="Mickpack">
+                                <span>Mick pack</span>
+                            </div>
+                    </div>
             </div>
 
             <div class="contenido herramienta">
                 <h3>Herramienta</h3>
-                <p>herramienta</p>
+                <p>Contamos con selladoras , tensionadoras , máquinas de flejado semi-automáticas y automáticas, asi como las refacciones y servicio de mantenimiento a las mismas</p>
+                    <div class="imagenesclase">
+                                <div class="imgprod">
+                                    <img src="img/Herramienta/Máquinas de Flejado Semiautomáticas.png" alt="maquinasflejado">
+                                    <span>Maquinas de flejado automaticas y Semiautomáticas</span>
+                                </div> 
+                                <div class="imgprod">
+                                    <img src="img/Herramienta/Selladora.png" alt="selladora">
+                                    <span>Selladora</span>
+                                </div>
+                                <div class="imgprod">
+                                    <img src="img/Herramienta/tensionadoras.png" alt="tensionadora">
+                                    <span>Tensionadora</span>
+                                </div>
+                        </div>
             </div>
 
             <div class="contenido otros">
                 <h3>Otros productos</h3>
-                <p>productos</p>
+                <p>Además contamos con otros productos de embalaje</p>
+                 <div class="imagenesclase">
+                        <div class="imgprod">
+                            <img src="img/Otros productos/Bolsas plasticas.png" alt="bolsas plasticas">
+                            <span>Bolas plasticas</span>
+                        </div> 
+                        <div class="imgprod">
+                            <img src="img/Otros productos/papel kraft.png" alt="papel kraft">
+                            <span>Papel kraft</span>
+                        </div>
+                        <div class="imgprod">
+                            <img src="img/Otros productos/rafia.png" alt="rafia">
+                            <span>Rafia</span>
+                        </div>
+                        <div class="imgprod">
+                            <img src="img/Otros productos/Rollos de polietileno.png" alt="rollos de polietileno">
+                            <span>Rollos de polietileno</span>
+                        </div>
+                        <div class="imgprod">
+                            <img src="img/Otros productos/sellos de seguridad.png" alt="sellos de seguridad">
+                            <span>Sellos de seguridad</span>
+                        </div>  
+                    </div>
             </div>
 
         </div>
@@ -147,16 +243,10 @@
             <div class="numero">
                 <h2>Contacto</h2>
                 <p>81-4007-0095</p>
-                <p>rghempaques@</p>
+                <p>ventas@rghempaques.com</p>
                 <p>San Nicolás de los Garza, N.L</p>
             </div>
             
-
-            <div class="redes">
-                <h2>Redes sociales</h2>
-                <p>Instagram</p>
-                <p>Facebook</p>
-            </div>
         </div>
     </div>
 </body>
