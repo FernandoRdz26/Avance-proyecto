@@ -1,19 +1,20 @@
-body{margin: 0; overflow-x: hidden;}
+body{margin: 0; overflow-x: hidden; background-color:#efede8;}
 /* sticky sirve para mantener un objeto pegado mientras se desplaza la pantalla */
-header{position: sticky; top: 0; z-index: 1000; background-color: white;}
+header{position: sticky; top: 0; z-index: 1000; background-color: #efede8;}
 .contenedorheader{display: flex; gap: 200px; align-items: center; justify-content: center; margin-bottom:0px;}
 nav{display: flex; gap: 30px; transition: 0.5s ease;}
 .encabezado{transition: 0.5s ease; text-decoration: none; color: black;}
 .encabezado:hover{transform: scale(1.1); color: orange;}
 .imagen{display: flex; justify-content: center; width: 100%;}
-.quienessomos{width: 800px; height: 300px; border-radius: 20px; background-color: rgba(192, 190, 187, 0.575); margin: 0 auto; margin-top: 10px;
+.imagen img{height: auto;}
+.quienessomos{width: 800px; height: 300px; border-radius: 20px; background-color:#f7f5f2; margin: 0 auto; margin-top: 10px;
     display: flex; flex-direction: column; text-align: center; padding: 10px; margin-bottom: 15px;}
 .quienessomos p{margin-top: 0 auto;font-size: 20px;}
 h2{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
 .productos{width: 1000px; height: auto; margin: 0 auto; margin-top: 20px; border-radius: 20px; margin-bottom: 200px;}
-input{display: none;} 
+.productos input{display: none;} 
 /* display:none sirve para ocultar */
-.contenido{display: none; padding: 10px; background:  rgba(192, 190, 187, 0.575); border-radius: 10px;}
+.contenido{display: none; padding: 10px; background:  #f7f5f2; border-radius: 10px;}
 /* checked es para condicionar a que se haga solamente cuando esta marcado el input:Radio
 el ~ es para usar un elemento del mismo nivel jeraquico o inferior, basicamente para seleccionar de manera especifica una clase o id 
 display:block para que ocupe el espacio completo necesario*/
@@ -24,14 +25,14 @@ display:block para que ocupe el espacio completo necesario*/
 #tab-foam:checked ~ .contenidoproductos .foam{display: inline-block;}
 #tab-herramienta:checked ~ .contenidoproductos .herramienta{display: inline-block;}
 #tab-otros:checked ~ .contenidoproductos .otros{display: block;}
-.pestaña{display: inline-block; background-color: rgba(255, 166, 0, 0.596); cursor: pointer; border-radius: 5px; padding: 5px; transition: 0.5s ease;}
-.pestaña:hover{transform: scale(1.05);}
+.pestaña{display: inline-block; background-color:  #e86f13; cursor: pointer; border-radius: 5px; padding: 5px; 
+  transition: 0.3s ease; color:white;}
+.pestaña:hover{transform: scale(1.05); background-color:  #e86f13cc;}
 #tab-cajas:checked ~ .pestaña label[for="tab-cajas"],#tab-peliculas:checked ~ .pestaña label[for="tab-peliculas"]{background-color: aqua;}
-.rayafinal{width:100vw; height: 50px; background: rgba(255, 166, 0, 0.61);}
-.contacto{background-image: linear-gradient(rgba(0, 0, 0, 0.377)), url(img/almacen\ 4.jpg); background-repeat: no-repeat; background-size: cover; width: 100vw; height: 700px;
-        display: flex; }
-.contactanos{width: 800px; height: 400px; background: rgba(255, 255, 255, 0.863); margin: 0 auto; margin-top: 150px; border-radius: 20px; 
-    display: flex; gap: 130px;}
+.contacto{ width: 100vw; height: 700px; display: flex; gap:50px; justify-content: center; align-items: center; 
+ }
+.contactanos{width: 800px; height: 400px; background:#f7f5f2; margin: 0 auto; margin-top: 150px; border-radius: 20px; 
+    display: flex; gap: 130px; box-sizing: border-box; padding:20px;}
 .contactanos h2{margin-left: 20px; color: orange;}
 .contactanos p{font-size: 20px; margin-left: 20px;}
 .productos img{width: 250px; height: 250px;}
@@ -39,11 +40,74 @@ display:block para que ocupe el espacio completo necesario*/
 .imagenesclase{display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;}
 .imagenesclase img{transition: 0.5s ease; border-radius: 5px;}
 .imagenesclase img:hover{transform: scale(1.04);}
+.whatsapp {
+   width: 30px; height: 30px; display: grid; place-items: center; 
+    border-radius: 50%; background-color: #23c25e; color: rgb(251, 255, 252); text-decoration: none; z-index: 10;}
+.whatsapp-contacto{
+    display: flex; flex-direction: row; align-items: center; justify-content: center;
+}
+.email a , .formulario a{
+    display: flex; align-items: center; color: inherit; text-decoration: none; font-size: 20px; justify-content: center;}
+.emailicono{ display: grid; place-items: center; margin-left:20px;}
+.portada {
+    width: min(1180px, calc(100% - 40px));margin: 35px auto; padding: 40px; display: grid;
+grid-template-columns: 1fr 1.1fr; align-items: center; gap: 40px; box-sizing: border-box; background: #f7f5f2; 
+border-radius: 20px;}
+.foricono{display: grid; place-items: center; margin-right: 12px;}
+
+.portada-etiqueta { color: #e86f13; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;}
+.portada h1 { margin: 12px 0; font-size: clamp(32px, 4vw, 48px); line-height: 1.1;}
+.portada-contenido > p:not(.portada-etiqueta) { font-size: 18px; line-height: 1.5;}
+.portada-imagen img { display: block; width: 100%; height: 380px; object-fit: cover; border-radius: 14px;}
+.portada-botones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px;}
+.boton {padding: 12px 18px; border-radius: 7px; text-decoration: none; font-weight: bold;}
+.boton-principal { color: white; background: #e86f13; transition:0.3s ease; }
+.boton-secundario {color: #333; border: 1px solid #333; transition:0.3s ease;}
+.boton-principal:hover { background: #e86f13cc; transform: scale(1.05);}
+.boton-secundario:hover { background: #333; color: white; transform: scale(1.05);}
+.raya-contacto{width:min(1180px,calc(100% - 40px));margin:35px auto 50px;padding:30px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-sizing:border-box;background:#e86f13;color:white;border-radius:16px;}
+.raya-contacto h2{margin:0 0 8px;color:white;}
+.raya-contacto p{margin:0;font-size:17px;}
+.raya-boton{flex-shrink:0;padding:12px 20px;border-radius:7px;background:white;color:#333;text-decoration:none;font-weight:bold;}
+.formulario-container{width:100%;max-width:800px;margin:0 auto;padding:20px;background:#f7f5f2;border-radius:10px;box-sizing:border-box;
+                      flex-direction:row; display:flex; gap:10px; justify-content:center; align-items:center; position:relative;}
+.formulario-container label{font-weight: bold;}
+.formulario-container input{margin-bottom:10px; width:400px; border:none; border-bottom:2px solid black; background:#f7f5f2; outline:none;}
+.formulario-header{display:flex; flex-direction:column; align-items:center; margin-bottom:20px;}
+.formulario-body{min-height:100vh;display:flex;flex-direction:column;}
+.formulario-body .formulario-container{margin:auto;}
+.formulario-body header hr{margin:0;border:0;height:3px;background:#000;}
+  .contacto{width:100%;box-sizing:border-box;}
+/* .mapa{width:100%;} */
+.mapa iframe{display:block;width:100%;height:280px;}
+.formulario-container button{margin-top:12px;padding:11px 24px;border:0;border-radius:7px;background:#e86f13;color:white;font-size:16px;font-weight:bold;cursor:pointer;transition:0.3s ease;}
+.formulario-container button:hover{background: #e86f13cc;transform:scale(1.05);}
+.formulario-container button:focus-visible{outline:3px solid #333;outline-offset:3px;}
+@media(max-width:600px){
+    .raya-contacto{flex-direction:column;align-items:flex-start;padding:24px;}
+}
+
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 24px;
+    }
+
+    .hero-imagen img {
+        height: 250px;
+    }
+}
+
 @media(max-width: 768px){
     .contenedorheader {
     flex-direction: column;
     gap: 15px;
     padding: 10px 0;
+  }
+
+  .imagen{
+    display:none
   }
 
   nav {
@@ -67,8 +131,11 @@ display:block para que ocupe el espacio completo necesario*/
   }
 
   .pestaña {
+    display: grid;
     margin-bottom: 5px; /* Separa los botones si bajan de línea */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
 
   .productos img {
     width: 140px;  /* Imágenes un poco más pequeñas para que quepan dos por fila */
@@ -96,4 +163,23 @@ display:block para que ocupe el espacio completo necesario*/
     margin-left: 0;
     text-align: center;
   }
+}
+@media (max-width: 768px) {
+    .portada {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 24px;
+    }
+
+    .portada-imagen img {
+        height: 250px;
+    }
+}
+@media(max-width:768px){
+    .formulario-body .formulario-container{width:calc(100% - 32px);max-width:480px;margin:24px auto;padding:18px;flex-direction:column;align-items:stretch;gap:12px;}
+    .formulario-header{align-items:flex-start;margin-bottom:0;}
+    .formulario-header h2{margin:0 0 10px;}
+    .formulario-header p{margin:0;line-height:1.4;}
+    .formulario-container form{width:100%;}
+    .formulario-container input{width:100%;max-width:100%;box-sizing:border-box;}
 }

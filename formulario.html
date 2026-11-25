@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body{background-image: linear-gradient(rgba(0, 0, 0, 0.452)), url(img/almacen\ 4.jpg);}
+    </style>
+
+</head>
+<body class="formulario-body">
+
+    <header>
+        <div class="contenedorheader">
+            <div class="logo">
+                <img src="img/RGHempaques logo 2.png" alt="logo" width="300px" height="50px">
+            </div>
+            <nav>
+                <a href="index.html" class="encabezado">Inicio</a>
+                <a href="productos.html" class="encabezado">Productos</a>
+                <a href="contacto.html" class="encabezado">Contacto</a>
+            </nav>
+        </div>
+       <hr color="black" style="height: 3px;">
+    </header>
+    
+    <div class="formulario-container">
+        <div class="formulario-header">
+            <h2>Formulario de Contacto</h2>
+            <p>Por favor, completa el siguiente formulario con sus datos y nosotros nos pondremos en contacto:</p>
+        </div>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="" id="" required placeholder="Ingresa tu nombre completo">
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Ingresa tu email">
+            <br>
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required minlength="10" maxlength="10" placeholder="Ingresa tu número de teléfono">
+            <br>
+            <label for="producto">Producto:</label>
+            <input type="text" id="producto" name="producto" required placeholder="Especifica el producto que desea empaquetar" >
+            <br>
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" required placeholder="Especifica la cantidad de productos a empaquetar">
+            <br>
+            <label for="medidas">Medidas:</label>
+            <input type="text" id="medidas" name="medidas" required placeholder="Especifica las medidas del producto como largo, ancho y alto">
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+</body>
+</html>
