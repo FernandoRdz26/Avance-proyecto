@@ -11,6 +11,7 @@
     </style>
 
 </head>
+
 <body class="formulario-body">
 
     <header>
@@ -32,9 +33,9 @@
             <h2>Formulario de Contacto</h2>
             <p>Por favor, completa el siguiente formulario con sus datos y nosotros nos pondremos en contacto:</p>
         </div>
-        <form>
+        <form id="cotizacion-formulario">
             <label for="nombre">Nombre:</label>
-            <input type="text" name="" id="" required placeholder="Ingresa tu nombre completo">
+            <input type="text" name="nombre" id="nombre" required placeholder="Ingresa tu nombre completo">
             <br>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required placeholder="Ingresa tu email">
@@ -54,6 +55,25 @@
             <button type="submit">Enviar</button>
         </form>
     </div>
+
+    <script>
+    document.getElementById("cotizacion-formulario").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const nombre = document.getElementById("nombre").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const telefono = document.getElementById("telefono").value.trim();
+        const producto = document.getElementById("producto").value.trim();
+        const cantidad = document.getElementById("cantidad").value.trim();
+        const medidas = document.getElementById("medidas").value.trim();
+
+        const mensaje = `Buen día, mi nombre es ${nombre}. Me gustaría empaquetar ${producto}. La cantidad es ${cantidad} y 
+        las medidas son ${medidas}. Mi correo es ${email} y mi teléfono ${telefono}.`;
+
+        const enlace = `https://wa.me/528140070095?text=${encodeURIComponent(mensaje)}`;
+        window.open(enlace, "_blank", "noopener,noreferrer");
+    });
+</script>
 
 </body>
 </html>
